@@ -2,4 +2,6 @@
 housei_kokusai.appで作ったexampleコード
 
 
-SharedPreferencesでデータを永続化は、"torokuManday.kt"の1限の部分だけ
+「SharedPreferencesでデータを永続化」は、"torokuManday.kt"の1限の部分だけ
+
+「SharedPreferencesのデータを表示」は、"zikannwariManday.ktの1限の部分だけ
