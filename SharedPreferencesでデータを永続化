@@ -1,0 +1,89 @@
+package com.example.housei_kokusai
+
+import android.content.Context
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.navigation.NavController
+
+
+
+//Fragmentを継承したclassを作る　これがなきゃ始まらない
+class tourokuManday:Fragment() {
+
+    var navController: NavController? = null
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+
+
+    ): View? {
+//まずは、こいつでfragment_homeを表示する
+        return inflater.inflate(R.layout.fragment_touroku_manday, container, false)
+
+
+    }
+
+
+    //SharedPreferencesでデータを永続化!!!
+    //わからなくなったら、https://qiita.com/taowata/items/d5cfbd665cceb1dc4974
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+
+        // getSharedPreferencesメソッドでSharedPreferencesオブジェクトを取得
+        //Context.MODE_PRIVATEは、他のアプリとデータ共有をしない設定
+        val sharedPref = requireActivity().getSharedPreferences("ファイル名",Context.MODE_PRIVATE)
+
+        // getString()を呼び出して保存されている文字列を読み込む
+        // まだ保存されていない場合はデフォルトの文字列を返す
+        //getString("key名","デフォルトの文字列")
+        val savedText = sharedPref.getString("Getuyou1", "空き")
+
+
+        val Getuyou1 = requireActivity().findViewById<EditText>(R.id.Getuyou_1)
+        Getuyou1.setText(savedText)
+
+
+
+        val button = view.findViewById<Button>(R.id.save_button)
+
+        button.setOnClickListener{
+            // テキストボックスに入力されている文字列を取得
+            val Getuyou1_text = Getuyou1.text.toString()
+            // プリファレンスに書き込む
+            sharedPref.edit().putString("Getuyou1", Getuyou1_text).apply()
+
+            val Getuyou2_text = Getuyou2.text.toString()
+            sharedPref.edit().putString("Getuyou2", Getuyou1_text).apply()
+
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
