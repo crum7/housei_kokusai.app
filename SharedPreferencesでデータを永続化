@@ -63,17 +63,9 @@ class tourokuManday:Fragment() {
             // プリファレンスに書き込む
             sharedPref.edit().putString("Getuyou1", Getuyou1_text).apply()
 
-            val Getuyou2_text = Getuyou2.text.toString()
-            sharedPref.edit().putString("Getuyou2", Getuyou1_text).apply()
-
 
 
         }
-
-
-
-
-
 
 
     }
