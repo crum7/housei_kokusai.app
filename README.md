@@ -1,7 +1,11 @@
 # housei_kokusai.app
-housei_kokusai.appで作ったexampleコード
 
+法政国際アプリコードの置き場所
+google driveからこっちへ
+定期的にpullしておけば、パソコンが壊れても、機能を追加して壊れたときにも安心
 
-「SharedPreferencesでデータを永続化」は、"torokuManday.kt"の1限の部分だけ
+main　→　特に何も書かない。
+apple →　xcodeのcode
+android　→　androidのcode
 
-「SharedPreferencesのデータを表示」は、"zikannwariManday.ktの1限の部分だけ
+問題とかやっておかないといけないことがあったら、Issueをtodoリスト的に使ってみてもいいかも。
